@@ -40,7 +40,7 @@ def eDNsaliency(imgPath, outPath, opts):
     biasToCntr = (svm.get_nr_feature()-nFeatures) == 1
 
     # compute saliency map 
-    model = SthorSaliencyModel(desc, svmModel, biasToCntr)  
+    model = EDNSaliencyModel(desc, svmModel, biasToCntr)  
     salMap = model.saliency(img, normalize=False)  
 
     # read fixation map / empirical saliency map 
