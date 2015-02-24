@@ -43,12 +43,13 @@ def eDNsaliency(imgPath, outPath, opts):
     model = EDNSaliencyModel(desc, svmModel, biasToCntr)  
     salMap = model.saliency(img, normalize=False)  
 
+    salMap = salMap.astype('f')
+    if not opts.noBlur:
+        salMap = ndimage.gaussian_filter(salMap, sigma=30)
+
     # read fixation map / empirical saliency map 
     if opts.fixMap: 
         fixMap = misc.imread(opts.fixMap) 
-
-        salMap = salMap.astype('f')
-        salMap = ndimage.gaussian_filter(salMap, sigma=30) 
 
         # compute AUC
         if opts.auc: 
@@ -97,6 +98,11 @@ def get_optparser():
         default=False,
         help="compute AUC for given fixation map (default: False); "
              "requires fixation map") 
+    parser.add_option("--no-blur",
+        action="store_true",
+        dest="noBlur",
+        default=False,
+        help="Do not blur the final saliency map (default: False)")
     return parser
 
 def main(): 
