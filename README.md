@@ -17,6 +17,7 @@ Options:
   --histeq           histogram equalization with given empirical saliency map
                      (default: False); requires empirical saliency map
   --auc              computes AUC for given fixation map; requires fixation map
+  --no-blur          disable the default smoothing of the final map
 
 ```
 
