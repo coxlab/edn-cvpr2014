@@ -39,6 +39,9 @@ Examples
 
 ./eDNsaliency --auc --fixMap img_fixPts.jpg img.jpg salMap.jpg
     Computes Area Under the Curve (AUC) for fixation map (img_fixPts.jpg)
+    
+./eDNsaliency --svm ./svm-slm --white ./whiten-slm  img.jpg  salMap-noCntr.jpg
+    Computes non-centered saliency maps
 ```
 
 
