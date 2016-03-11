@@ -125,4 +125,4 @@ Eleonora Vig, Michael Dorr, David Cox, "Large-Scale Optimization of Hierarchical
 
 Link to the paper: http://coxlab.org/pdfs/cvpr2014_vig_saliency.pdf 
 
-For questions and feedback please contact me at vig@fas.harvard.edu
+For questions and feedback please contact me at eleonora.vig@dlr.de
